@@ -1,12 +1,14 @@
 # Budget Tracker
 > Budget Tracker is a finance application that helps you track your expenses and income.
 
-## Built With
+### Built With
 - Reactjs
 - JavaScript
 - HTML5
 - CSS3
 - ES6 (Modules)
+- npm packages
+- Speechly 
 
 ## Case study
 > Problem Statement: ...
