@@ -1,2 +1,2 @@
-# budget-tracker
-Budget Tracker helps you track your expenses and income.
+# Budget Tracker
+> Budget Tracker is a finance application that helps you track your expenses and income.
