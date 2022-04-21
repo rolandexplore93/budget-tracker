@@ -8,7 +8,10 @@
 - CSS3
 - ES6 (Modules)
 - npm packages
-- Speechly 
+- Speechly (for voice recognition)
+- material-ui
+- uuid (to create unique identifiers)
+- chart.js (for charts)
 
 ## Case study
 > Problem Statement: ...
@@ -25,6 +28,10 @@ Next: `cd budget-tracker`
 Then `npm install` to install packages
 
 Finally `npm start`
+
+## Dependencies to install
+> Downgrade React to version 16.12.0 because some of our dependencies do not support the latest version of react yet
+npm i react@16.12.0 react-dom@16.12.0 @material-ui/core @material-ui/icons @material-ui/lab @speechly/react-client @speechly/react-ui chart.js react-chartjs-2 uuid
 
 ## Author
 👤 **Orobola Roland Ogundipe**
