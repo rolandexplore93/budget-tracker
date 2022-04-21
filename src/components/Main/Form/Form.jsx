@@ -38,7 +38,7 @@ const Form = () => {
         <Grid xs={6}>
             <TextField type='date' label='Date' fullWidth/>
         </Grid>
-        <button className={classes.button} color='primary' variant='outlined' fullWidth>CREATE</button>
+        <Button className={classes.button} color='primary' size='small' variant='contained' fullWidth>CREATE</Button>
     </Grid>
   )
 }
