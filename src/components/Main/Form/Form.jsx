@@ -4,29 +4,22 @@ import { ExpenseTrackerContext } from '../../../Context/Context';
 import {v4 as uuidv4 } from 'uuid'
 
 import useStyles from './styles'
-
-// get days of the week
-const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-let day = days[new Date().getDay()];
-
-// get months
-const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-let month = months[new Date().getMonth()];
+import { incomeCategories, expenseCategories } from '../../../Constants/Category';
+import {formatInputDate} from '../../../utils/formatDate';
 
 // Put all form input into a state
 const initialState = {
     type: 'income',
     category: '',
     amount: '',
-    date: `${day}, ${new Date().getDate()} ${month} ${new Date().getFullYear()}`
+    date: formatInputDate(new Date()),
 }
 
 const Form = () => {
     const classes = useStyles();
     const { createTransaction } = useContext(ExpenseTrackerContext)
     const [formData, setFormData] = useState(initialState)
-    // console.log(createTransaction)
-    // console.log(formData)
+    console.log(formData)
 
     const createNewTransaction = () => {
         const transaction = {
@@ -37,6 +30,9 @@ const Form = () => {
         createTransaction(transaction)
         setFormData(initialState)
     }
+    
+    // Separate Income and Expense categories and map through each category in the form category
+    const selectedCategory = formData.type === 'income' ? incomeCategories : expenseCategories;
 
   return (
     <Grid container spacing={2}>
@@ -58,9 +54,7 @@ const Form = () => {
             <FormControl fullWidth>
                 <InputLabel>Category</InputLabel>
                 <Select value={formData.category} onChange={e => setFormData({ ...formData, category: e.target.value})}>
-                    <MenuItem value='business'>Business</MenuItem>
-                    <MenuItem value='salary'>Salary</MenuItem>
-                    <MenuItem value='health'>Health</MenuItem>
+                    { selectedCategory.map((category) => <MenuItem key={category.type} value={category.type}>{category.type}</MenuItem>)}
                 </Select>
             </FormControl>
         </Grid>
