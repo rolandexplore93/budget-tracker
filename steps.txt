@@ -1,0 +1,8 @@
+// Install react and dependencies
+// Implement UI template for Income and Expense components report using material-ui
+// Implement UI template for Basic Main component report using material-ui
+// Implement UI template for Form component and import it inside Main component
+// Implement UI template for List component and import it inside Main component
+// Create useReducer(), createContext() and useContext() to share data between components
+// Retrieve input data from users to the console 
+// Display input data in list item and automatically refresh form input to default

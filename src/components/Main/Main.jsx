@@ -9,7 +9,7 @@ const Main = ({title, subheader, amount}) => {
     const classes = useStyles();
 
   return (
-      <Card className={classes.root}>
+      <Card className={`${classes.root}, ${classes.expenseTracker}`}>
             <CardHeader title={title} subheader={subheader} />
             <CardContent>
                 <Typography align='center' variant='h6'>Total Balance: ${amount}</Typography>

@@ -25,13 +25,20 @@ The following step will help you get the local copy of this project and run it s
 
 Next: `cd budget-tracker`
 
-Then `npm install` to install packages
+Then, install react and other packages
+#### Dependencies to install
+> Downgrade React to lower version 16.12.0 because some of the dependencies do not support the latest version of react yet
+> Downgrade to these version of testing-library dependencies as follow to support speechly, chartjs and uuid dependencies
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "^12.6.0",
+
+npm i react@16.12.0 react-dom@16.12.0 
+npm i @material-ui/core @material-ui/icons @material-ui/lab 
+npm i @speechly/react-client @speechly/react-ui chart.js react-chartjs-2 uuid
 
 Finally `npm start`
 
-## Dependencies to install
-> Downgrade React to version 16.12.0 because some of our dependencies do not support the latest version of react yet
-npm i react@16.12.0 react-dom@16.12.0 @material-ui/core @material-ui/icons @material-ui/lab @speechly/react-client @speechly/react-ui chart.js react-chartjs-2 uuid
 
 ## Author
 👤 **Orobola Roland Ogundipe**

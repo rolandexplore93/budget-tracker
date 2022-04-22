@@ -21,4 +21,8 @@ export default makeStyles((theme) => ({
   divider: {
     margin: '20px 0',
   },
+  expenseTracker: {
+    borderBottom: '10px solid rgba(0, 0, 139, 0.8)',
+    borderTop: '10px solid rgba(0, 0, 139, 0.8)'
+  }
 }));
