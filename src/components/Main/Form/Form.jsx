@@ -3,8 +3,6 @@ import {TextField, Typography, Button, Select, InputLabel, Grid, FormControl, Me
 import { ExpenseTrackerContext } from '../../../Context/Context';
 import {v4 as uuidv4 } from 'uuid'
 
-
-
 import useStyles from './styles'
 
 // get days of the week

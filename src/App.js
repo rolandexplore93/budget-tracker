@@ -20,7 +20,7 @@ function App() {
               />
           </Grid>
         </Grid>
-        <Grid xs={12} sm={5} md={7} spacing={0}>
+        <Grid xs={12} sm={5} md={7} >
 
           <Grid item md={6} style={{ marginBottom: '50px'}}>
               <Details title='Income' amount='100'/>

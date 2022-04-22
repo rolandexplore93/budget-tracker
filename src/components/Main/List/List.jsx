@@ -8,29 +8,27 @@ import { ExpenseTrackerContext } from '../../../Context/Context';
 
 const List = () => {
     const classes = useStyles();
-    const {deleteTransaction} = useContext(ExpenseTrackerContext)
-    // console.log(deleteTransaction)
+    const {deleteTransaction, transactions} = useContext(ExpenseTrackerContext)
 
-    const transactions = [
-        {id: "1", type: 'Income', category: 'Salary', amount: 150, date: `Thu Apr 21`},
-        {id: "2", type: 'Expense', category: 'Health', amount: 30, date: `Fri Apr 22`},
-        {id: "3", type: 'Income', category: 'Business', amount: 1150, date: `Fri Apr 22`},
-    ]
-  
     return (
         <MUIList dense="false" className={classes.list}>
             {
                 transactions.map(transaction => (
                     <Slide direction='down' in mountOnEnter unmountOnExit key={transaction}>
-                        <ListItem>
+                        <ListItem key={transaction.id}>
                             <ListItemAvatar>
-                                <Avatar className={transaction.type === 'Income' ? classes.avatarIncome : classes.avatarExpense}>
+                                <Avatar className={transaction.type === 'income' ? classes.avatarIncome : classes.avatarExpense}>
                                     <MoneyOff />
                                 </Avatar>
                             </ListItemAvatar>
                             <ListItemText primary={transaction.category} secondary={`$${transaction.amount} - ${transaction.date }`} />
                             <ListItemSecondaryAction>
-                                <IconButton edge="end" aria-label='delete' onClick=''>
+                                <IconButton edge="end" aria-label='delete' onClick={() => {
+                                    let confirmationText = 'Are you sure you want to delete this transaction?';
+                                    if (window.confirm(confirmationText) === true){
+                                        deleteTransaction(transaction.id);
+                                    } return
+                                }}>
                                     <Delete />
                                 </IconButton>
                             </ListItemSecondaryAction>
