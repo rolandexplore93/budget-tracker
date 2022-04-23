@@ -6,3 +6,6 @@
 // Create useReducer(), createContext() and useContext() to share data between components
 // Retrieve input data from users to the console 
 // Display input data in list item and automatically refresh form input to default
+// Populate category items under income and Expense
+// Format the default display date to display current date
+// Add chart to Income and Expense dashboard using custom Hooks

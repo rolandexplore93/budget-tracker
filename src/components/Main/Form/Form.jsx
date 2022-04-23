@@ -27,6 +27,8 @@ const Form = () => {
             amount: Number(formData.amount),
             id: uuidv4()
         }
+    console.log(transaction)
+
         createTransaction(transaction)
         setFormData(initialState)
     }
@@ -62,7 +64,7 @@ const Form = () => {
             <TextField type='number' label='Amount' fullWidth value={formData.amount} onChange={e => setFormData({...formData, amount: e.target.value})}/>
         </Grid>
         <Grid xs={6}>
-            <TextField type='date' label='Date' fullWidth value={formData.date} onChange={e => setFormData({...formData, date: e.target.value})}/>
+            <TextField type='date' label='Date' fullWidth value={formData.date} onChange={e => setFormData({...formData, date: formatInputDate(e.target.value)})}/>
         </Grid>
         <Button className={classes.button} color='primary' size='small' variant='contained' fullWidth onClick={createNewTransaction}>CREATE</Button>
     </Grid>
