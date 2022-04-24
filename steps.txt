@@ -8,4 +8,5 @@
 // Display input data in list item and automatically refresh form input to default
 // Populate category items under income and Expense
 // Format the default display date to display current date
-// Add chart to Income and Expense dashboard using custom Hooks
+// Get the total sum of all categories in each Budget (Income or Expense)
+// Add chartjs to display Income and Expense data using custom Hooks on dashboard 

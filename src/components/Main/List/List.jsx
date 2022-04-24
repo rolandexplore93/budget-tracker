@@ -17,7 +17,7 @@ const List = () => {
                     <Slide direction='down' in mountOnEnter unmountOnExit key={transaction}>
                         <ListItem key={transaction.id}>
                             <ListItemAvatar>
-                                <Avatar className={transaction.type === 'income' ? classes.avatarIncome : classes.avatarExpense}>
+                                <Avatar className={transaction.type === 'Income' ? classes.avatarIncome : classes.avatarExpense}>
                                     <MoneyOff />
                                 </Avatar>
                             </ListItemAvatar>

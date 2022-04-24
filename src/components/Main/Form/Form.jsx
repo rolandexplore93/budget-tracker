@@ -9,7 +9,7 @@ import {formatInputDate} from '../../../utils/formatDate';
 
 // Put all form input into a state
 const initialState = {
-    type: 'income',
+    type: 'Income',
     category: '',
     amount: '',
     date: formatInputDate(new Date()),
@@ -19,7 +19,6 @@ const Form = () => {
     const classes = useStyles();
     const { createTransaction } = useContext(ExpenseTrackerContext)
     const [formData, setFormData] = useState(initialState)
-    console.log(formData)
 
     const createNewTransaction = () => {
         const transaction = {
@@ -27,14 +26,12 @@ const Form = () => {
             amount: Number(formData.amount),
             id: uuidv4()
         }
-    console.log(transaction)
-
         createTransaction(transaction)
         setFormData(initialState)
     }
-    
+
     // Separate Income and Expense categories and map through each category in the form category
-    const selectedCategory = formData.type === 'income' ? incomeCategories : expenseCategories;
+    const selectedCategory = formData.type === 'Income' ? incomeCategories : expenseCategories;
 
   return (
     <Grid container spacing={2}>
@@ -47,8 +44,8 @@ const Form = () => {
             <FormControl fullWidth>
                 <InputLabel>Type</InputLabel>
                 <Select value={formData.type} onChange={e => setFormData({ ...formData, type: e.target.value})}>
-                    <MenuItem value='income'>Income</MenuItem>
-                    <MenuItem value='expense'>Expense</MenuItem>
+                    <MenuItem value='Income'>Income</MenuItem>
+                    <MenuItem value='Expense'>Expense</MenuItem>
                 </Select>
             </FormControl>
         </Grid>
