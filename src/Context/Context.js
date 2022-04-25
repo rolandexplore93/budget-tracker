@@ -1,7 +1,8 @@
 import React, { useReducer, createContext } from "react";
 import { ContextReducer } from "./ContextReducer";
 
-const initialState = [];
+// Make adjustment to the initial state to either display item in the local storage or default 
+const initialState = JSON.parse(localStorage.getItem("transactions")) || [];
 
 export const ExpenseTrackerContext = createContext();
 
