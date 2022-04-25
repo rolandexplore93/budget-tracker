@@ -14,7 +14,7 @@ const Main = ({title, subheader, amount}) => {
             <CardContent>
                 <Typography align='center' variant='h6'>Total Balance: ${amount}</Typography>
                 {/* Infocard for Speechly text API */}
-                <Typography align='center' variant='subtitle2'>Try to say: Add Expense from $200 in Catagory Salary for Monday</Typography>
+                <Typography align='center' variant='subtitle2'>Try to say: Add Income for $200 in Catagory Salary for Monday</Typography>
                 <Divider />
               <Form />
             </CardContent>

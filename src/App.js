@@ -1,9 +1,10 @@
 // import logo from './logo.svg';
 import {Grid} from '@material-ui/core'
+import { PushToTalkButton, PushToTalkButtonContainer, ErrorPanel } from '@speechly/react-ui'
+
 
 import Details from './components/Details/Details'
 import Main from './components/Main/Main'
-import formatDate from './utils/formatDate'
 import useStyles from './styles'
 
 // style={{border: '1px solid yellow'}}
@@ -33,9 +34,11 @@ function App() {
         </Grid>
 
       </Grid>
+      <PushToTalkButtonContainer>
+          <PushToTalkButton />
+          <ErrorPanel />
+      </PushToTalkButtonContainer>
 
-      {/* {formatDate} */}
-      
     </div>
   );
 }

@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ProvideContext } from './Context/Context';
-
+import { SpeechProvider } from '@speechly/react-client'
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(
@@ -14,9 +14,12 @@ import { ProvideContext } from './Context/Context';
 // );
 
 ReactDOM.render(
-  <ProvideContext>
-      <App />
-  </ProvideContext>,
+  // import Speechly and wrap the app code inside it
+  <SpeechProvider appId='8966b6a1-9d96-49d8-ad48-b34c2b2c379a' language='en-US'>
+      <ProvideContext>
+          <App />
+      </ProvideContext>
+  </SpeechProvider>,
   document.getElementById('root')
 );
 
