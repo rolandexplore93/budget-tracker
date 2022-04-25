@@ -7,6 +7,7 @@ import { useSpeechContext } from '@speechly/react-client';
 import useStyles from './styles'
 import { incomeCategories, expenseCategories } from '../../../Constants/Category';
 import {formatInputDate} from '../../../utils/formatDate';
+import CustomizedSnackbar from '../../Snackbar/Snackbar';
 
 // Put all form input into a state
 const initialState = {
@@ -22,6 +23,9 @@ const Form = () => {
     const [formData, setFormData] = useState(initialState)
     const { segment } = useSpeechContext()
 
+    // Define state here
+    const [open, setOpen] = useState(false)
+
     const createNewTransaction = () => {
         // Add Error handling condition for voice-to-speech
         // If any of the condition below is ture, Go outside of the transaction and do not create the transaction
@@ -32,6 +36,7 @@ const Form = () => {
             amount: Number(formData.amount),
             id: uuidv4()
         }
+        setOpen(true)
         createTransaction(transaction)
         setFormData(initialState)
     }
@@ -86,6 +91,8 @@ const Form = () => {
 
   return (
     <Grid container spacing={2}>
+        {/* The imported props in CustomizedSnackbar are STATE */}
+        <CustomizedSnackbar open={open} setOpen={setOpen} />
         <Grid item xs={12}>
             <Typography align='center' variant='subtitle2' gutterBottom>
                 {segment && segment.words.map((w) => w.value).join(" ")}
