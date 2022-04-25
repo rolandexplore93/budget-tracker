@@ -23,7 +23,10 @@ const Form = () => {
     const { segment } = useSpeechContext()
 
     const createNewTransaction = () => {
-             
+        // Add Error handling condition for voice-to-speech
+        // If any of the condition below is ture, Go outside of the transaction and do not create the transaction
+        if (Number.isNaN(Number(formData.amount)) || !formData.date.includes("-")) return;
+        
         const transaction = {
             ...formData,
             amount: Number(formData.amount),
