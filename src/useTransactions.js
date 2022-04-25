@@ -47,8 +47,6 @@ const useTransactions = (title) => {
 
     console.log(transactionActivityPerType)
 
-    const balance = total
-
     // Next: remove the category with amount less than 0..
     // This will be used when importing the chart
     const filteredCategories = categories.filter(c => c.amount > 0)

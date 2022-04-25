@@ -4,6 +4,7 @@ import { ExpenseTrackerContext } from '../../Context/Context';
 import useStyles from './styles'
 import Form from './Form/Form';
 import List from './List/List';
+import InfoCard from '../InfoCard';
 
 const Main = ({title, subheader, amount}) => {
     const classes = useStyles();
@@ -14,9 +15,11 @@ const Main = ({title, subheader, amount}) => {
             <CardHeader title={title} subheader={subheader} />
             <CardContent>
                 <Typography align='center' variant='h6'>Total Balance: ${balance}</Typography>
-                {/* Infocard for Speechly text API */}
-                <Typography align='center' variant='subtitle2'>Try to say: Add Income for $200 in Catagory Salary for Monday</Typography>
-                <Divider />
+                <Typography align='center' variant='subtitle2'>
+                    {/* Infocard for Speechly voice */}
+                    <InfoCard />
+                </Typography>
+                <Divider className={classes.divider} />
               <Form />
             </CardContent>
             <CardContent className={classes.cartContent}>
