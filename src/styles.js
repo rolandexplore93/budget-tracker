@@ -25,7 +25,7 @@ export default makeStyles((theme) => ({
   },
   grid: {
     '& > *': {
-      margin: theme.spacing(1),
+      margin: theme.spacing(0),
       boxSizing: 'border-box'
     },
   },

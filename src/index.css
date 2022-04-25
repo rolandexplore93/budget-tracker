@@ -1,5 +1,5 @@
 #root, html, body {
-  height: 100%;
+  height: auto;
   margin: 0;
 }
 
@@ -11,7 +11,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(./assets/money-bgimg.png);
   background-repeat: no-repeat;
-  background-size: cover; 
+  background-size: 100% 100%; 
+  box-sizing: border-box;
 }
 
 code {

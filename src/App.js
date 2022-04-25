@@ -29,27 +29,30 @@ const App = () => {
   
 
   return (
-    <div>
-      <Grid className={classes.grid} container spacing={0} alignItems='center' justifyContent='center' style={{height: '100vh'}}>
-        <Grid ref={main} xs={12} sm={6} md={4}>
-          <Grid item >
+    <div style={{height: 'auto', boxSizing: 'border-box'}}>
+      <Grid container style={{height: 'inherit', boxSizing: 'border-box'
+      }
+     } className={classes.grid} spacing={2} alignItems='center' justifyContent='center'>
+        
+        <Grid item xs={10} sm={6} md={4}  ref={main}>
               <Main title='Expense Tracker' subheader='Powered by Speechly'
                 amount='300'
               />
-          </Grid>
         </Grid>
-        <Grid xs={12} sm={5} md={7} >
 
-          <Grid item md={6} style={{ marginBottom: '50px'}}>
+        <Grid container spacing={1} item xs={10} sm={6} md={6}>
+
+          <Grid  item xs={12} md={6} sm={10} style={{ marginBottom: '20px'}}>
               <Details title='Income' amount='100'/>
           </Grid>
           
-          <Grid item md={6}>
+          <Grid item xs={12} md={6} sm={10}>
               <Details title='Expense' amount='400'/>
           </Grid>
         </Grid>
 
       </Grid>
+
       <PushToTalkButtonContainer>
           <PushToTalkButton />
           <ErrorPanel />
