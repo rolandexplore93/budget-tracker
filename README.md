@@ -1,6 +1,12 @@
 # Budget Tracker
 > Budget Tracker is a finance application that helps you track your expenses and income.
 
+### Live Demo Link
+> [Netlify](https://expense-tracker-by-roland.netlify.app/)
+
+### Display
+![2-expense-tracker-react](https://user-images.githubusercontent.com/63131597/166122671-47e824c7-aad4-4c19-b74c-4225a95ac9a5.gif)
+
 ### Built With
 - Reactjs
 - JavaScript
